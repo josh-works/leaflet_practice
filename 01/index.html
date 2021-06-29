@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Leaflet Practice 01</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+  </head>
+
+  <body>
+    <div id="mapid"></div>
+    <script type="text/javascript">
+      var mymap = L.map('mapid').setView([39.755968, -105.221891], 16);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 22,
+        id: 'mapbox/satellite-v9',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
+      }).addTo(mymap);
+      
+      var marker = L.marker([39.755968, -105.221891]).addTo(mymap);
+      
+      var circle = L.circle([ 39.756235, -105.222092 ], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+      }).addTo(mymap);
+          var circle = L.circle([39.760261, -105.225802], {
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5,
+          radius: 10
+      }).addTo(mymap);
+      
+      var polygon = L.polygon([
+          [ 39.757411, -105.223373 ],
+          [ 39.757507, -105.223223 ],
+          [ 39.760588, -105.226065 ],
+          [ 39.760496, -105.226225 ]
+        ],{
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5
+        }).addTo(mymap);
+        polygon.bindPopup("Because of the speed, proximity of vehicles here, this section of road is particularly dangerous to cyclists. Neither drivers nor cyclists like cyclists being here.");
+        
+        
+      var polygon = L.polygon([
+          [  39.768961, -105.231039  ],
+          [  39.769015, -105.230934  ],
+          [  39.754986, -105.217838  ],
+          [  39.755060, -105.217696  ]
+        ],{
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.5
+        }).addTo(mymap);
+        polygon.bindPopup("Because of the speed, proximity of vehicles, this section of road is particularly dangerous to cyclists. Neither drivers nor cyclists like cyclists being here.");
+    </script>
+
+    
+  </body>
+</html>
