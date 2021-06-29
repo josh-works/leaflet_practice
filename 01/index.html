@@ -26,8 +26,8 @@
         accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
       }).addTo(mymap);
       
-      var marker = L.marker([39.755968, -105.221891]).addTo(mymap);
-      
+      var marker = L.marker([ 39.755784, -105.221692 ]).addTo(mymap);
+      marker.bindPopup("<b>Here's the 'Welcome to Golden' Arch</b><br>Many people visit this exact spot on the map.").openPopup();
       var circle = L.circle([ 39.756235, -105.222092 ], {
       color: 'red',
       fillColor: '#f03',
