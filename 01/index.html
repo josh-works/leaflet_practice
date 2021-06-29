@@ -28,19 +28,15 @@
       
       var marker = L.marker([ 39.755784, -105.221692 ]).addTo(mymap);
       marker.bindPopup("<b>Here's the 'Welcome to Golden' Arch</b><br>Many people visit this exact spot on the map.").openPopup();
+    
       var circle = L.circle([ 39.756235, -105.222092 ], {
-      color: 'red',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 10
-      }).addTo(mymap);
-          var circle = L.circle([39.760261, -105.225802], {
-          color: 'red',
-          fillColor: '#f03',
-          fillOpacity: 0.5,
-          radius: 10
-      }).addTo(mymap);
-      
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 10
+        }).addTo(mymap);
+      circle.bindPopup("This intersection seems to annoy all users - drivers, pedestrians, and cyclists.");
+        
       var polygon = L.polygon([
           [ 39.757411, -105.223373 ],
           [ 39.757507, -105.223223 ],
