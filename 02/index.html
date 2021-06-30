@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     
-    <title>Leaflet Practice Day 1</title>
+    <title>Leaflet Practice Day 2</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -26,9 +26,6 @@
         accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
       }).addTo(mymap);
       
-      var marker = L.marker([ 39.755784, -105.221692 ]).addTo(mymap);
-      marker.bindPopup("<b>Here's the 'Welcome to Golden' Arch</b><br>Many people visit this exact spot on the map.").openPopup();
-    
       var circle = L.circle([ 39.756235, -105.222092 ], {
         color: 'red',
         fillColor: '#f03',
@@ -61,6 +58,21 @@
           fillOpacity: 0.5
         }).addTo(mymap);
         polygon.bindPopup("Because of the speed, proximity of vehicles, this section of road is particularly dangerous to cyclists. Neither drivers nor cyclists like cyclists being here.");
+        
+        var popup = L.popup()
+        .setLatLng([39.756235, -105.222092])
+        .setContent("I am a standalone popup.")
+        .openOn(mymap);
+        
+        function onMapClick(e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("You clicked the map at " + e.latlng.toString())
+              .openOn(mymap).
+          console.log("You clicked the map at " + e.latlng);
+        }
+        
+        mymap.on('click', onMapClick);
     </script>
 
     
