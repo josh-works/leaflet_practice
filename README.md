@@ -8,3 +8,4 @@ Click below to see these live. I expect these will build on themselves.
 
 [day 1](https://josh.works/leaflet_practice/01/index.html) (working through the beginner tutorial, customizing it a bit where possible/reasonable)
 [day 2](https://josh.works/leaflet_practice/02/index.html) (more of the same)
+[day 3](https://josh.works/leaflet_practice/03/index.html) (Mobile, "show current location" functionality)
