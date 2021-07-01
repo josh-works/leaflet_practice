@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     
-    <title>Leaflet Practice Day 3</title>
+    <title>Leaflet Practice Day 4: Custom Icons</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -27,6 +27,121 @@
         zoomOffset: -1,
         accessToken: 'pk.eyJ1Ijoiam9zaHdvcmtzIiwiYSI6ImNrcWk2NzUxeTJhbm8yem4weDFreTY5bjQifQ.Qja1F9B1-i7hK3KOvSYAvg'
       }).addTo(map);
+      // lets add an icon
+      
+      
+      
+      
+       var MobilityIcon = L.Icon.extend({
+           options: {
+               shadowUrl: '',
+               iconSize:     [95, 95],
+               // shadowSize:   [50, 64],
+               iconAnchor:   [22, 94],
+               shadowAnchor: [4, 62],
+               popupAnchor:  [-3, -76]
+           }
+       });
+       
+       var wheelchairConfused = new MobilityIcon({iconUrl: 'wheelchair-confused-red.png'});
+       var bikerWalkerAccident = new MobilityIcon({iconUrl: 'biker-walker-accident-red.png'});
+       var driverWalkerAccident = new MobilityIcon({iconUrl: 'driver-walker-accident-red.png'});
+       var walkerAccident = new MobilityIcon({iconUrl: 'walker-accident-red.png'});
+       var driverBikerAccident = new MobilityIcon({iconUrl: 'car-bike-crash-red.png'});
+      
+       // car-bike conflict areas
+       L.marker([39.754119, -105.229897], {icon: driverBikerAccident}).addTo(map)
+        .bindPopup("This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.");
+      
+       L.marker([39.761474, -105.223796], {icon: driverBikerAccident}).addTo(map)
+        .bindPopup("This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.");
+      
+       L.marker([39.75961, -105.225168], {icon: driverBikerAccident}).addTo(map)
+        .bindPopup("This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.");
+      
+       L.marker([39.759884, -105.225417], {icon: driverBikerAccident}).addTo(map)
+        .bindPopup("This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.");
+      
+       L.marker([39.754968, -105.225876], {icon: driverBikerAccident}).addTo(map)
+        .bindPopup("This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.");
+       
+       
+       // walker problems
+       L.marker([39.756113, -105.229665], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       L.marker([39.755922, -105.230118], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       L.marker([39.757335, -105.227967], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       L.marker([39.757303, -105.232176], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       L.marker([39.757888, -105.231725], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       L.marker([39.757933, -105.232382], {icon: walkerAccident}).addTo(map)
+        .bindPopup("Tons of people take this path, but it's unpaved and uneaven. Particularly dangerous at night or when there's snow, or if pushing a stroller.");
+       
+       // wheelchair problems
+       L.marker([39.753361, -105.228997], {icon: wheelchairConfused}).addTo(map)
+        .bindPopup("There's no way for a wheel chair to get up this curb.");
+       // biker-walker problems
+       
+       // driver walker problems
+       L.marker([39.755414, -105.221375], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.759529, -105.222], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.7557, -105.220825], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.754587, -105.220619], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.757468, -105.220072], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.758198, -105.220741], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.757049, -105.222911], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.756605, -105.222494], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.757468, -105.220072], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.756237, -105.222199], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.755107, -105.221897], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.754274, -105.221131], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+       L.marker([39.754183, -105.220163], {icon: driverWalkerAccident}).addTo(map)
+        .bindPopup("When the weather is nice, there's tons of people here walking around, but also tons of cars driving through. Dangerous conditions for everyone.");
+      
+      // diagnostic/placement helpers
+      var popup = L.popup();
+      function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(map);
+        console.log("You clicked the map at " + e.latlng);
+      }
+      
+      map.on('click', onMapClick);
+
         
     </script>
     
