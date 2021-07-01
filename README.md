@@ -6,13 +6,24 @@ Click below to see these live. I expect these will build on themselves.
 
 ## From zero to not-zero
 
-[day 1](https://josh.works/leaflet_practice/01/index.html) (working through the beginner tutorial, customizing it a bit where possible/reasonable)
-[day 2](https://josh.works/leaflet_practice/02/index.html) (more of the same)
-[day 3](https://josh.works/leaflet_practice/03/index.html) (Mobile, "show current location" functionality)
+- [day 1](https://josh.works/leaflet_practice/01) (working through the beginner tutorial, customizing it a bit where possible/reasonable)
+- [day 2](https://josh.works/leaflet_practice/02) (more of the same)
+- [day 3](https://josh.works/leaflet_practice/03) (Mobile, "show current location" && zoom to current location functionality)
+- [day 4](https://josh.works/leaflet_practice/04) (Custom markers)
 
 ### Notes for each day (newest on top)
 
-#### Day 3
+#### Day 4 - custom markers
+
+Getting icons from [https://thenounproject.com/](https://thenounproject.com/). I'm going to add markers to a map in Golden to represent (for example) various sorts of mobility problems, like:
+
+- Spots where people in wheelchairs would be at risk
+- Spots where people in cars and people on bikes are at risk of collision
+- Spots where people in cars and people walking are at risk of collision
+- spots where people on bikes and people walking are at risk of collision
+- spots where people walking would be unhappy
+
+#### Day 3 - show current location (mobile and desktop)
 
 The [Leaflet mobile example](https://leafletjs.com/examples/mobile/) doesn't work super well.
 
